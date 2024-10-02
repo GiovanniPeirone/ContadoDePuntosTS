@@ -1,32 +1,55 @@
 
 interface puntos{
-    puntos: number;
+  punto : number;
 }
 
-let EquiposA: puntos = {
-  puntos : 0
-};
+let EquipoA : puntos = {
+  punto : 0
+}
 
-let EquiposB: puntos = {
-  puntos : 0
-};
 
-function contar()
-{
-  console.log('Click');
+let EquipoB : puntos = {
+  punto: 0
+}
 
-  const CEquiposA = document.getElementById('PuntosA') as HTMLElement;
-  const CEquiposB = document.getElementById('PuntosB') as HTMLElement;
+
+const HandBall_Input_Equipo_A = document.getElementById('HandBall_Input_Equipo_A') as HTMLInputElement;
+const Resistencia_Input_A = document.getElementById('Resistencia_Input_A') as HTMLInputElement;
+const Ajederz_Input_A = document.getElementById('Ajederz_Input_A') as HTMLInputElement;
+
+const HandBall_Input_Equipo_B = document.getElementById('HandBall_Input_Equipo_B') as HTMLInputElement;
+const Resistencia_Input_B = document.getElementById('Resistencia_Input_B') as HTMLInputElement;
+const Ajederz_Input_B = document.getElementById('Ajederz_Input_B') as HTMLInputElement;
+
+const OutputPuntosA = document.getElementById('PuntosA') as HTMLElement;
+const OutputPuntosB = document.getElementById('PuntosB') as HTMLElement;
+
+const EquipoGanador = document.getElementById('EquipoGanador') as HTMLElement;
+
+
+function contar(): void {
+  let Valor_A_Ingresado_HandBall : number = parseInt(HandBall_Input_Equipo_A.value, 10);
+  let Valor_A_Ingresado_Rsistencia : number = parseInt(Resistencia_Input_A.value, 10);
+  let Valor_A_Ingresado_Ajedrez : number = parseInt(Ajederz_Input_A.value, 10);
+
+  let Valor_B_Ingresado_HandBall : number = parseInt(HandBall_Input_Equipo_B.value, 10);
+  let Valor_B_Ingresado_Rsistencia : number = parseInt(Resistencia_Input_B.value, 10);
+  let Valor_B_Ingresado_Ajedrez : number = parseInt(Ajederz_Input_B.value, 10);
+
   
-  let InputPuntosB = document.getElementById('InputPuntosB')as HTMLInputElement;
-  let InputPuntosA = document.getElementById('InputPuntosA')as HTMLInputElement;
+  EquipoA.punto += Valor_A_Ingresado_HandBall + Valor_A_Ingresado_Rsistencia + Valor_A_Ingresado_Ajedrez;
+  EquipoB.punto += Valor_B_Ingresado_HandBall + Valor_B_Ingresado_Rsistencia +  Valor_B_Ingresado_Ajedrez;
 
-  EquiposA.puntos += parseInt(InputPuntosA.value);
-  EquiposB.puntos += parseInt(InputPuntosB.value); 
+  OutputPuntosA.innerText += EquipoA.punto.toString();
+  OutputPuntosB.innerText += EquipoB.punto.toString();
+
+  if (EquipoA.punto > EquipoB.punto){
+    EquipoGanador.innerText += 'EquipoA';
+  }
 
   
-  CEquiposA.innerText += EquiposA.puntos;
-  CEquiposB.innerText += EquiposB.puntos;
-
+  if (EquipoA.punto < EquipoB.punto){
+    EquipoGanador.innerText += 'EquipoB';
+  }
 
 }

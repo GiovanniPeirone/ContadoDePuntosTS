@@ -6,17 +6,35 @@
     <title>Document</title>
 </head>
 <body>
+
+    <h1>Equipo Ganador: <h1 id="EquipoGanador"></h1></h1>
+    <br>
     <div class="EquipoA">
         <h1>Equipo A</h1>
-        <h3 id="PuntosA"></h3>
-        <input type="text" id="InputPuntosB">
+        <h3>HandBall</h3>
+        <input type="number" id="HandBall_Input_Equipo_A">
+        <h3>Resistencia</h3>
+        <input type="number" id="Resistencia_Input_A">
+        <h3>Ajedrez</h3>
+        <input type="number" id="Ajederz_Input_A">
+        <br>
+        <h2>PuntosA totales: <h2 id="PuntosA"></h2></h2>
     </div>
+    <hr>
     <div class="EquipoB">
-        <h1>Equipo B</h1>
-        <h3 id="PuntosB"></h3>
-        <input type="text" id="InputPuntosB">
+        <h1>Equipo A</h1>
+        <h3>HandBall</h3>
+        <input type="number" id="HandBall_Input_Equipo_B">
+        <h3>Resistencia</h3>
+        <input type="number" id="Resistencia_Input_B">
+        <h3>Ajedrez</h3>
+        <input type="number" id="Ajederz_Input_B">
+        <br>
+        <h2>PuntosA totales: <h2 id="PuntosB"></h2></h2>
     </div>
-    <button onclick="contar()">Enviar</button>
-    <script src="ContadorDePuntos.ts"></script>
+
+    <button onclick="contar()">contar</button>
+
+    <script src="ContadorDePuntos.js"></script>
 </body>
 </html>

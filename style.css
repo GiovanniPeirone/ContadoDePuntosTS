@@ -1,0 +1,65 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #bfcc94;
+    color: #0d1821;
+    text-align: center;
+}
+
+input{
+    list-style: none;
+    border: none;
+    background-color: #bfcc94;
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+
+.EquipoGanadorClass{
+    margin-top: 5%;
+}
+
+.contenedorContadorDePuntos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10%;    
+    margin: auto;
+    margin-top: 5%;
+    height: 300px;
+    width: 50%;
+    
+}
+
+.EquipoA{
+    border: 1px solid #f2e9e4;
+    background-color: #b4cded;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+
+.EquipoB{
+    border: 1px solid #f2e9e4;
+    background-color: #b4cded;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+
+.button-contar{
+    list-style: none;
+    border: none;
+    border: 1px solid #f2e9e4;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #b4cded;
+    height: 100px;
+    width: 50%;
+}
+
+.button-contar:hover {
+    background-color: #899db6;
+}

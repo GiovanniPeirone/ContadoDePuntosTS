@@ -27,14 +27,16 @@ const OutputPuntosB = document.getElementById('PuntosB') as HTMLElement;
 const EquipoGanador = document.getElementById('EquipoGanador') as HTMLElement;
 
 
-function contar(): void {
-  let Valor_A_Ingresado_HandBall : number = parseInt(HandBall_Input_Equipo_A.value, 10);
-  let Valor_A_Ingresado_Rsistencia : number = parseInt(Resistencia_Input_A.value, 10);
-  let Valor_A_Ingresado_Ajedrez : number = parseInt(Ajederz_Input_A.value, 10);
 
-  let Valor_B_Ingresado_HandBall : number = parseInt(HandBall_Input_Equipo_B.value, 10);
-  let Valor_B_Ingresado_Rsistencia : number = parseInt(Resistencia_Input_B.value, 10);
-  let Valor_B_Ingresado_Ajedrez : number = parseInt(Ajederz_Input_B.value, 10);
+function contar(): void {
+  
+  let Valor_A_Ingresado_HandBall : number = parseInt(HandBall_Input_Equipo_A.value, 10) || 0;
+  let Valor_A_Ingresado_Rsistencia : number = parseInt(Resistencia_Input_A.value, 10) || 0;
+  let Valor_A_Ingresado_Ajedrez : number = parseInt(Ajederz_Input_A.value, 10) || 0;
+
+  let Valor_B_Ingresado_HandBall : number = parseInt(HandBall_Input_Equipo_B.value, 10) || 0;
+  let Valor_B_Ingresado_Rsistencia : number = parseInt(Resistencia_Input_B.value, 10) || 0;
+  let Valor_B_Ingresado_Ajedrez : number = parseInt(Ajederz_Input_B.value, 10) || 0;
 
   
   EquipoA.punto += Valor_A_Ingresado_HandBall + Valor_A_Ingresado_Rsistencia + Valor_A_Ingresado_Ajedrez;
@@ -52,4 +54,7 @@ function contar(): void {
     EquipoGanador.innerText += 'EquipoB';
   }
 
+  if (EquipoA.punto == EquipoB.punto){
+    EquipoGanador.innerHTML += 'Empate';
+  }
 }
